@@ -1,1 +1,1 @@
-package github.com/hunger780/dmchat/dm/dto
+package dto

@@ -1,3 +1,3 @@
-module github.com/hunger780/dmchat/dm/dto
+module dto
 
 go 1.15
