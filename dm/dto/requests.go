@@ -1,4 +1,4 @@
-package services
+package dto
 type DB_User struct {
     Id      string    `json:"id"`
 	User_ID   string `json:"userid"`

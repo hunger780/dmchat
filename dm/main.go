@@ -6,7 +6,7 @@ import (
     "log"
   //  "io/ioutil"
     "net/http"
-	"services"
+	"github.com/hunger780/dmchat/dm/services"
    
     "github.com/gorilla/mux"
 )

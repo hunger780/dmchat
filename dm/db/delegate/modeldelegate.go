@@ -1,4 +1,4 @@
-package services
+package db
 const DBName ="DM_CHAT"
 const Collection ="USERS"
 
