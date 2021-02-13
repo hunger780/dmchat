@@ -7,7 +7,7 @@ import (
     "net/http"
 	"time"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/hunger780/dmchat/dm/dto"
+	"github.com/hunger780/dmchat/dto"
 	
 )
 

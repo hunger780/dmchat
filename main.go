@@ -1,4 +1,4 @@
-package github.com/hunger780/dmchat
+package dmchat
 
 import (
    // "encoding/json"
