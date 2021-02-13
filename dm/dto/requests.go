@@ -1,4 +1,5 @@
-package dto
+package github.com/hunger780/dmchat/dm/dto
+
 type User struct {
     id      string    `json:"id"`
 	userid   string `json:"userid"`
