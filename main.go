@@ -1,4 +1,4 @@
-package dmchat
+package main
 
 import (
    // "encoding/json"
@@ -7,7 +7,7 @@ import (
   //  "io/ioutil"
     "net/http"
 	"github.com/hunger780/dmchat/services"
-   
+    "github.com/hunger780/dmchat/db"
     "github.com/gorilla/mux"
 )
 
@@ -26,7 +26,7 @@ func handleRequests() {
     myRouter.HandleFunc("/signup", services.Signup).Methods("POST")
     myRouter.HandleFunc("/users", services.ReturnAllUsers)
     myRouter.HandleFunc("/signin", services.Signin).Methods("POST")
-    services.Connect() 
+    db.Connect()
     log.Fatal(http.ListenAndServe(":8080", myRouter))
     
 }

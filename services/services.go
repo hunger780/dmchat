@@ -8,21 +8,23 @@ import (
 	"time"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/hunger780/dmchat/dto"
+	"github.com/hunger780/dmchat/db"
 	
 )
 
 
-var users []User
+var users []dto.User
 func Signup(w http.ResponseWriter, r *http.Request) {
     // get the body of our POST request
     // unmarshal this into a new Article struct
     // append this to our Articles array.    
     reqBody, _ := ioutil.ReadAll(r.Body)
-    var user User 
+    var user dto.User 
     json.Unmarshal(reqBody, &user)
     // update our global Articles array to include
     // our new Article
-    users = append(users, user)
+    
+	dbUser := db.InsertUser(MapUserToDBUser(user))
 	//Connect()
     json.NewEncoder(w).Encode(user)
 }
@@ -30,8 +32,8 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 func Signin(w http.ResponseWriter, r *http.Request) {
 	
 	var creds Credentials
-	var currentUser User
-	var retErr string
+	//var currentUser dto.User
+	//var retErr string
 	// Get the JSON body and decode into credentials
 	err := json.NewDecoder(r.Body).Decode(&creds)
 	if err != nil {
@@ -39,7 +41,7 @@ func Signin(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
-
+	/*
 	// Get the expected password from our in memory map
 	currentUser,retErr  = getUserForUserID(creds.Userid)
 	if retErr=="User not found" {
@@ -50,7 +52,7 @@ func Signin(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	
+	*/
 	// If a password exists for the given user
 	// AND, if it is the same as the password we received, the we can move ahead
 	// if NOT, then we return an "Unauthorized" status
@@ -93,19 +95,4 @@ func ReturnAllUsers(w http.ResponseWriter, r *http.Request) {
     json.NewEncoder(w).Encode(users)
 }
 
-func getUserForUserID(userid string) (User,string) {
-    
-	fmt.Println("Endpoint Hit: getUserForUserID")
-    var matchUser User
-	var err string
-	for i := 0; i <= len(users); i++ {
-        if users[i].userid == userid {
-			matchUser = users[i]
-			err = ""
-			return matchUser,err
-		}
-    }
-	err = "User not found"
-	return matchUser,err
-	
-}
+
