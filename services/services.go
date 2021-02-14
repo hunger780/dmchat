@@ -8,7 +8,7 @@ import (
 	"time"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/hunger780/dmchat/dto"
-	"github.com/hunger780/dmchat/db"
+	//"github.com/hunger780/dmchat/db"
 	
 )
 
@@ -24,7 +24,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
     // update our global Articles array to include
     // our new Article
     
-	dbUser := db.InsertUser(MapUserToDBUser(user))
+	//dbUser := db.InsertUser(MapUserToDBUser(user))
 	//Connect()
     json.NewEncoder(w).Encode(user)
 }

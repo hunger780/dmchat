@@ -1,9 +1,9 @@
 package dto
 type User struct {
-    id      string    `json:"id"`
-	userid   string `json:"userid"`
-    firstName   string `json:"firstName"`
-    lastName    string `json:"lastName"`
-    dob string `json:"dob"`
-	password string `json:"password"`
+    Id      string    `json:"id"`
+	Userid   string `json:"userid"`
+    FirstName   string `json:"firstName"`
+    LastName    string `json:"lastName"`
+    Dob string `json:"dob"`
+	Password string `json:"password"`
 }
