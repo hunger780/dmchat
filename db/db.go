@@ -5,6 +5,7 @@ import "io/ioutil"
 import "fmt"
 import "os"
 import "encoding/json"
+import "github.com/hunger780/dmchat/db/model"
 
 func Connect(){
 	file, err := ioutil.ReadFile("locals.json")
@@ -34,7 +35,7 @@ func Connect(){
 	if err != nil {
 		fmt.Println("Database connection error: %v", err)
 	}
-	// See https://godoc.org/github.com/zebresel-com/mongodm#Connection.Register
+	
 	connection.Register(&model.User{}, "users")
 }
 

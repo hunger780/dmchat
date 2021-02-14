@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"github.com/astaxie/beego"
-	"github.com/moehlone/mongodm_sample/models"
+	//"github.com/astaxie/beego"
+	"github.com/hunger780/dmchat/db/model"
 	response "github.com/zebresel-com/beego-response"
 	"github.com/zebresel-com/mongodm"
 )

@@ -3,10 +3,8 @@ package controller
 import (
 	"net/http"
 	"strings"
-
 	"gopkg.in/mgo.v2/bson"
-
-	"github.com/moehlone/mongodm_sample/models"
+	"github.com/hunger780/dmchat/db/model"
 )
 
 type UserController struct {
